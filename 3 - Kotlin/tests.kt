@@ -1,0 +1,20 @@
+// FUNCTIONS
+// =========
+
+fun runTests() {
+    println("Test 01: " + (getResult("2 + 3") == "${2 + 3}"))
+    println("Test 02: " + (getResult("2 - 3") == "${2 - 3}"))
+    println("Test 03: " + (getResult("2 * 3") == "${2 * 3}"))
+    println("Test 04: " + (getResult("2 / 3") == "${2.0 / 3}"))
+    println("Test 05: " + (getResult("2 / 0") == "Undefined"))
+    println("Test 06: " + (getResult("  7 +   2 * 3 - 4 / -2 ") == "${  7 +   2 * 3 - 4 / -2 }"))
+    println("Test 07: " + (getResult("  7 +   2 / 3 - 4 * +-2 ") == "${  7 +   2.0 / 3 - 4 * +-2 }"))
+    println("Test 08: " + (getResult("2.0 + 3.0") == "${2.0 + 3.0}"))
+}
+
+// MAIN
+// ====
+
+fun main() {
+    runTests()
+}

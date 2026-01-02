@@ -1,0 +1,3 @@
+FROM groovy:jdk25-alpine
+WORKDIR /app
+COPY . .

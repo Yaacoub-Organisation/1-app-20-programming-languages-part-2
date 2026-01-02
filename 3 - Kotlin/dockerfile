@@ -1,0 +1,14 @@
+FROM eclipse-temurin:21-jdk-jammy
+
+WORKDIR /app
+
+# Install Kotlin compiler from the official distribution
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends bash wget unzip \
+ && wget -q https://github.com/JetBrains/kotlin/releases/download/v1.9.25/kotlin-compiler-1.9.25.zip -O /tmp/kotlinc.zip \
+ && unzip /tmp/kotlinc.zip -d /opt \
+ && ln -s /opt/kotlinc/bin/kotlinc /usr/local/bin/kotlinc \
+ && ln -s /opt/kotlinc/bin/kotlin /usr/local/bin/kotlin \
+ && rm -rf /var/lib/apt/lists/* /tmp/kotlinc.zip
+
+COPY . .

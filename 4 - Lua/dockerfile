@@ -1,0 +1,3 @@
+FROM nickblah/lua:5.5
+WORKDIR /app
+COPY . .
